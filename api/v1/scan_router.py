@@ -11,7 +11,7 @@ from infrastructure.messaging.kafka_producer import KafkaMessagingProducer
 
 router = APIRouter()
 
-@router.post("", response_model=schemas.ScanCreateResponse, status_code=status.HTTP_202_ACCEPTED)
+@router.post("/scan", response_model=schemas.ScanCreateResponse, status_code=status.HTTP_202_ACCEPTED)
 def create_scan(
     scan_request: schemas.ScanCreateRequest,
     db: Session = Depends(get_db),

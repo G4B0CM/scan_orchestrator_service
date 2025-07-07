@@ -11,7 +11,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(scan_router.router, prefix="/api/v1/scans", tags=["Scans"])
+app.include_router(scan_router.router,tags=["Scans"])
 
 @app.get("/health", tags=["Health Check"])
 def health_check():
